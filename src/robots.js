@@ -61,3 +61,4 @@ export const robots = [
     }
   ];
   
+  export default robots
