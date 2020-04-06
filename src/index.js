@@ -8,6 +8,8 @@ import 'tachyons';
 ReactDOM.render(
   <React.StrictMode>
     <Card />
+    <Card/>
+    <Card/>
   </React.StrictMode>,
   document.getElementById('root')
 );

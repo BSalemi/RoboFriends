@@ -3,8 +3,8 @@ import React from 'react';
 class Card extends React.Component{
     render(){
         return(
-            <div>
-                <img src=""/>
+            <div className="bg-light-green dib br3 pa3 ma2 grow">
+                <img alt="robots" src="https://robohash.org/test?200x200"/>
                 <div>
                     <h2>
                         Jane Doe
