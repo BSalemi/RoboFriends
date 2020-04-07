@@ -6,7 +6,7 @@ class CardList extends React.Component {
 
     generateRobotCards = () => {
         const roboCards = robots.map(bot => {
-            return <Card id={bot.id} name={bot.name} email={bot.email}/>
+            return <Card key={bot.id} id={bot.id} name={bot.name} username={bot.username} email={bot.email}/>
         })
         return roboCards
     }

@@ -2,7 +2,7 @@ import React from 'react';
 
 class Card extends React.Component{
     render(){
-        const {name, email, id} = this.props;
+        const {name, email, id, username} = this.props;
 
         return(
             <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
@@ -11,6 +11,9 @@ class Card extends React.Component{
                     <h2>
                         {name}
                     </h2>
+                    <p>
+                        {username}
+                    </p>
                     <p>
                         {email}
                     </p>
