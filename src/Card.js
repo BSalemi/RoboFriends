@@ -2,15 +2,17 @@ import React from 'react';
 
 class Card extends React.Component{
     render(){
+        const {name, email, id} = this.props;
+
         return(
             <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
-                <img alt="robots" src={`https://robohash.org/test${this.props.id}?200x200`}/>
+                <img alt="robots" src={`https://robohash.org/test${id}?200x200`}/>
                 <div>
                     <h2>
-                        {this.props.name}
+                        {name}
                     </h2>
                     <p>
-                        {this.props.email}
+                        {email}
                     </p>
                 </div>
             </div>
