@@ -1,15 +1,26 @@
 import React from 'react';
 import CardList from './CardList.js'
 import SearchBar from './SearchBar.js'
+import { robots } from './robots.js';
 
-const App = () => {
-    return(
-        <div>
-            <h1>RoboFriends</h1>
-            <SearchBar/>
-            <CardList/>
-        </div>
-    )
+class App extends React.Component{
+
+
+    state = {
+        robots: robots,
+        searchField: ""
+
+    }
+    render(){
+        return(
+                <div className="tc">
+                <h1>RoboFriends</h1>
+                <SearchBar/>
+                <CardList/>
+            </div>
+        )
+    }
 }
+
 
 export default App 
