@@ -1,9 +1,7 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-    state = {
-        searchTerm: ""
-    };
+   
 
     render(){
         return(
@@ -11,7 +9,6 @@ class SearchBar extends React.Component {
                 <input className="pa3 ba b--green bg-lightest-blue"
                     type="search"
                     placeholder="Search Robots"
-                    value={this.state.searchTerm}
                 />
             </div>
         )
