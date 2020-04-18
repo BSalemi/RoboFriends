@@ -21,13 +21,15 @@ class App extends React.Component{
     }
 
     render(){
-        const filteredRobots = this.state.robots.filter(robot => {
-            return robots.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+        const { robots, searchField} = this.state;
+
+        const filteredRobots = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchField.toLowerCase())
         })
         return(
                 <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
-                <SearchBar searchField={this.state.searchField} searchChange={this.onSearchChange}/>
+                <SearchBar searchField={searchField} searchChange={this.onSearchChange}/>
                 <Scroll>
                     <CardList robots={filteredRobots}/>
                 </Scroll>
