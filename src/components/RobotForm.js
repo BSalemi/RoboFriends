@@ -10,6 +10,12 @@ class RobotForm extends React.Component {
         email: ""
     }
 
+    handleOnChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
     render(){
         return (
             <>
@@ -17,10 +23,10 @@ class RobotForm extends React.Component {
                     Create a RoboFriend
                 </h1>
                 <form>
-                    <input type="text" value={this.state.name}/>
-                    <input type="text" value={this.state.username}/>
-                    <input type="text" value={this.state.email}/>
-                    <button/>
+                    <input type="text" name="name" value={this.state.name} placeholder="Name"/>
+                    <input type="text" name="username" value={this.state.username} placeholder="Username"/>
+                    <input type="text" name="email" value={this.state.email} placeholder="Email"/>
+                    <button value="Submit"/>
                 </form>
             </>
         )
