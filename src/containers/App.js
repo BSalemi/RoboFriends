@@ -2,6 +2,7 @@ import React from 'react';
 import CardList from '../components/CardList.js'
 import SearchBar from '../components/SearchBar.js'
 import Scroll from '../components/Scroll.js'
+import RobotForm from '../components/RobotForm.js'
 import { robots } from '../robots.js';
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends React.Component{
         return(
                 <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
+                <RobotForm/>
                 <SearchBar searchField={searchField} searchChange={this.onSearchChange}/>
                 <Scroll>
                     <CardList robots={filteredRobots}/>

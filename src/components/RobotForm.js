@@ -1,5 +1,6 @@
 import React from 'react';
-import robots from '../robots.js'
+import robots from '../robots.js';
+import './RobotForm.css';
 
 class RobotForm extends React.Component {
 
@@ -17,16 +18,17 @@ class RobotForm extends React.Component {
     }
 
     render(){
+        const inputCSS = "pa2 ba br1 b--green bg-lightest-blue"
         return (
             <>
-                <h1>
+                <h2 id="createRoboFriend">
                     Create a RoboFriend
-                </h1>
-                <form>
-                    <input type="text" name="name" value={this.state.name} placeholder="Name"/>
-                    <input type="text" name="username" value={this.state.username} placeholder="Username"/>
-                    <input type="text" name="email" value={this.state.email} placeholder="Email"/>
-                    <button value="Submit"/>
+                </h2>
+                <form className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+                    <input className={`${inputCSS}`} type="text" name="name" value={this.state.name} placeholder="Name" onChange={event => this.handleOnChange(event)}/>
+                    <input className={`${inputCSS}`} type="text" name="username" value={this.state.username} placeholder="Username"  onChange={event => this.handleOnChange(event)}/>
+                    <input className={`${inputCSS}`} type="text" name="email" value={this.state.email} placeholder="Email" onChange={event => this.handleOnChange(event)}/>
+                    <input className={`${inputCSS} +   ma1`} type="submit" value="Create RoboFriend"/>
                 </form>
             </>
         )
