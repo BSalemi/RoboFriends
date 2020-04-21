@@ -11,6 +11,10 @@
         color: #0ccac4;
     }
 
+    #roboForm {
+        display: none;
+    }
+
     h2 {
         font-family: 'SEGA LOGO FONT';
         font-weight: 200;

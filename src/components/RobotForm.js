@@ -17,14 +17,24 @@ class RobotForm extends React.Component {
         })
     }
 
+    handleOnClick = () => {
+        const roboForm = document.getElementById('roboForm');
+
+        if(roboForm.style.display === "none" ){
+            roboForm.style.display = "inline";
+        } else {
+            roboForm.style.display = "none";
+        }
+    }
+
     render(){
         const inputCSS = "pa2 ba br1 b--green bg-lightest-blue"
         return (
             <>
-                <h2 id="createRoboFriend">
+                <h2 id="createRoboFriend" onClick={() => this.handleOnClick()}>
                     Create a RoboFriend
                 </h2>
-                <form className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+                <form id="roboForm" className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
                     <input className={`${inputCSS}`} type="text" name="name" value={this.state.name} placeholder="Name" onChange={event => this.handleOnChange(event)}/>
                     <input className={`${inputCSS}`} type="text" name="username" value={this.state.username} placeholder="Username"  onChange={event => this.handleOnChange(event)}/>
                     <input className={`${inputCSS}`} type="text" name="email" value={this.state.email} placeholder="Email" onChange={event => this.handleOnChange(event)}/>
