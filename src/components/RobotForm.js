@@ -3,7 +3,11 @@ import React from 'react';
 class RobotForm extends React.Component {
 
     render(){
-        return
+        return (
+            <h1>
+                Create a RoboFriend
+            </h1>
+        )
     }
 }
 
