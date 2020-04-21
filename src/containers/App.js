@@ -15,6 +15,10 @@ class App extends React.Component{
 
     }
 
+    addRobot = (robot) => {
+        this.state.robots.push(robot)
+    }
+
     onSearchChange = (event) =>{
         this.setState({
             searchField: event.target.value
