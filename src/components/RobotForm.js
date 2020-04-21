@@ -27,13 +27,20 @@ class RobotForm extends React.Component {
         }
     }
 
-    handleOnSubmit = () => {
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        const roboForm = document.getElementById('roboForm');
+
         let robot = {
             id: robots.length + 1,
             name: this.state.name,
             username: this.state.username,
             email: this.state.email
-        }
+        };
+
+        this.props.addRobot(robot);
+        roboForm.style.display = "none";
+
     }
 
     render(){
@@ -43,7 +50,7 @@ class RobotForm extends React.Component {
                 <h2 id="createRoboFriend" onClick={() => this.handleOnClick()}>
                     Create a RoboFriend
                 </h2>
-                <form id="roboForm" className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5" onSubmit={()=> this.handleOnSubmit()}>
+                <form id="roboForm" className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5" onSubmit={(event)=> this.handleOnSubmit(event)}>
                     <input className={`${inputCSS}`} type="text" name="name" value={this.state.name} placeholder="Name" onChange={event => this.handleOnChange(event)}/>
                     <input className={`${inputCSS}`} type="text" name="username" value={this.state.username} placeholder="Username"  onChange={event => this.handleOnChange(event)}/>
                     <input className={`${inputCSS}`} type="text" name="email" value={this.state.email} placeholder="Email" onChange={event => this.handleOnChange(event)}/>

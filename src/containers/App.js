@@ -16,7 +16,10 @@ class App extends React.Component{
     }
 
     addRobot = (robot) => {
-        this.state.robots.push(robot)
+        this.setState({
+            ...this.state,
+            robots: [...this.state.robots, robot]
+        })
     }
 
     onSearchChange = (event) =>{
@@ -34,7 +37,7 @@ class App extends React.Component{
         return(
                 <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
-                <RobotForm/>
+                <RobotForm addRobot={this.addRobot}/>
                 <SearchBar searchField={searchField} searchChange={this.onSearchChange}/>
                 <Scroll>
                     <CardList robots={filteredRobots}/>
